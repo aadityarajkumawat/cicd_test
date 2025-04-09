@@ -1,14 +1,8 @@
 #!/bin/bash
 
-PORT=8000
+set -e
 
-# Find PID of process using the port
-PID=$(lsof -ti tcp:$PORT)
+sudo su - root
 
-if [ -z "$PID" ]; then
-  echo "No process is running on port $PORT"
-else
-  echo "Stopping process with PID $PID on port $PORT"
-  kill -9 $PID
-  echo "Process stopped."
-fi
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
