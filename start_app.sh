@@ -6,4 +6,4 @@ HOST="0.0.0.0"
 PORT=8000
 
 echo "Starting FastAPI server at http://$HOST:$PORT"
-python -m uvicorn $APP_MODULE --host $HOST --port $PORT
+python3 -m uvicorn $APP_MODULE --host $HOST --port $PORT
