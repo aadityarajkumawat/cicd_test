@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Define your app file and port
-APP_MODULE="main:app"
-HOST="0.0.0.0"
-PORT=8000
+set -e
 
-echo "Starting FastAPI server at http://$HOST:$PORT"
-python3 -m uvicorn $APP_MODULE --host $HOST --port $PORT
+sudo su - root
+
+docker pull adityakumawat01/cicd_test
+
+docker run -d -p 8000:8000 aadityakumawat01/cicd_test
