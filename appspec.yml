@@ -2,6 +2,10 @@ version: 0.1
 os: linux
 
 hooks:
+  BeforeInstall:
+    - location: stop_app1.sh
+      timeout: 300
+      runas: root
   ApplicationStop:
     - location: stop_app1.sh
       timeout: 300
