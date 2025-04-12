@@ -3,14 +3,14 @@ os: linux
 
 hooks:
   BeforeInstall:
-    - location: stop_app1.sh
+    - location: ./scripts/stop_app1.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: stop_app1.sh
+    - location: ./scripts/stop_app1.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: start_app.sh
+    - location: ./scripts/start_app.sh
       timeoout: 300
       runas: root
